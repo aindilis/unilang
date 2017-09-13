@@ -1,0 +1,35 @@
+                                       'Test' => bless( {
+                                                          'signature' => [
+                                                                           'hash'
+                                                                         ],
+                                                          'sig_table' => {
+                                                                           '' => 'hash'
+                                                                         },
+                                                          'version' => '1.0',
+                                                          'name' => 'Test',
+                                                          'help' => 'Testing.',
+                                                          'code' => sub { "DUMMY" }
+                                                        }, 'RPC::XML::Method' )
+
+                                       'system.listMethods' => bless( {
+                                                                      'namespace' => 'RPC::XML::Procedure',
+                                                                      'mtime' => 1256258803,
+                                                                      'version' => '1.1',
+                                                                      'file' => '/usr/local/share/perl/5.10.1/RPC/XML/listMethods.xpl',
+                                                                      'name' => 'system.listMethods',
+                                                                      'signature' => [
+                                                                                       'array',
+                                                                                       'array string'
+                                                                                     ],
+                                                                      'sig_table' => {
+                                                                                       '' => 'array',
+                                                                                       'string' => 'array'
+                                                                                     },
+                                                                      'help' => 'List all the methods known to the server. If the STRING parameter is passed,
+it is used as a substring to match against, with only those matching methods
+being returned. Note that the STRING parameter is not a regular expression,
+but rather just a simple substring.',
+                                                                      'hidden' => 0,
+                                                                      'called' => 0,
+                                                                      'code' => sub { "DUMMY" }
+                                                                    }, 'RPC::XML::Method' )

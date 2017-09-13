@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+
+# now we need to determine how to run this script
+
+require Net::Daemon;
+package MyDaemon;
+
+
+
+sub ChangeUid {
+  my $uid;
+  if ($user !~ /^\d+$/) {
+    if (defined(my $uid = getpwnam($user))) {
+      $user = $uid;
+    }
+  }
+  $< = ($> = $user);
+}

@@ -1,0 +1,35 @@
+Exporter::import has 3 unstacked calls in outer
+Class::MethodMaker::new_with_init has 1 unstacked calls in outer
+Exporter::Heavy::heavy_export_to_level has 1 unstacked calls in outer
+Class::MethodMaker::get_set has 1 unstacked calls in outer
+Exporter::export_to_level has -1 unstacked calls in outer
+AutoLoader::AUTOLOAD has -3 unstacked calls in outer
+Net::hostent::import has -3 unstacked calls in outer
+Exporter::Heavy::heavy_export has 8 unstacked calls in outer
+Socket::__ANON__ has 9 unstacked calls in outer
+Socket::AUTOLOAD has -9 unstacked calls in outer
+Class::MethodMaker::_make_get_set has 1 unstacked calls in outer
+Exporter::export has -8 unstacked calls in outer
+utf8::AUTOLOAD has -1 unstacked calls in outer
+utf8::SWASHNEW has 1 unstacked calls in outer
+Total Elapsed Time = 2.384169 Seconds
+  User+System Time = 1.014169 Seconds
+Exclusive Times
+%Time ExclSec CumulS #Calls sec/call Csec/c  Name
+ 169.   1.721  2.081 327843   0.0000 0.0000  IO::Select::can_read
+ 101.   1.031  4.490      1   1.0315 4.4896  UniLang::MAS::Server::Listen
+ 62.2   0.631  0.668 407361   0.0000 0.0000  Class::MethodMaker::__ANON__
+ 38.5   0.391  0.383  15878   0.0000 0.0000  UniLang::MAS::Server::GetClientFro
+                                             mHandle
+ 35.5   0.360  0.360  15877   0.0000 0.0000  IO::Select::handles
+ 13.9   0.141  0.181  15878   0.0000 0.0000  UniLang::MAS::Server::Receive
+ 12.8   0.130  0.208      4   0.0325 0.0521  UniLang::Util::Message::BEGIN
+ 7.99   0.081  0.444  15878   0.0000 0.0000  UniLang::MAS::Server::ProcessMessa
+                                             ge
+ 6.90   0.070  0.317     11   0.0063 0.0288  UniLang::MAS::Server::BEGIN
+ 4.93   0.050  0.000      3   0.0167 0.0000  utf8::SWASHNEW
+ 3.94   0.040  0.040  15890   0.0000 0.0000  IO::Handle::getline
+ 2.96   0.030  0.069      5   0.0060 0.0139  UniLang::Util::Conf::BEGIN
+ 2.96   0.030  0.435      9   0.0033 0.0483  UniLang::MAS::MAS::BEGIN
+ 1.97   0.020  0.030      5   0.0040 0.0060  IO::Seekable::BEGIN
+ 1.97   0.020  0.020      6   0.0033 0.0033  IO::Socket::BEGIN

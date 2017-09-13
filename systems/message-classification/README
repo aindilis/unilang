@@ -1,0 +1,9 @@
+This is the message classification system.
+
+This   involves  taking   features   of  messages   and  producing   a
+classification for what actions to take on the given item.
+
+Therefore,  this system  depends  on  learning from  the  user how  to
+classify messages.
+
+Right now we are using c4.5, but this can change.

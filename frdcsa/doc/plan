@@ -1,0 +1,31 @@
+Here is the basic state of this project.
+
+The most important capability I  think we need is the planning system.
+The planning system ought to have the following capabilities.
+
+At any given time, it creates  a computed list of what priorities are,
+depending on what the expected utility of completing a priority.
+
+We can express tasks as formula: ala. opencyc.  I am afraid of some of
+the known  problems with planning  with opencyc.  But, we  should none
+the  less  setup pse  to  interface with  opencyc,  and  to provide  a
+translation for  each element.   We should attempt  this in  a smaller
+domain however.
+
+To get opencyc  working does not depend on getting it  to be a daemon,
+but we could write an opencyc client agent.
+
+Then PSE, must store all commands and their cyc translations.  Rosetta
+does not really do a good job  of this, although maybe there is a more
+recent release.
+
+My conclusion is that simply mapping out simple dependencies is not as
+important as doing the cyc stuff.
+
+In  order to  even  state this  stuff to  cyc,  we have  to build  the
+appropriate   knowledge  system.   Therefore   we  should   adopt  the
+opencyc-common  agent to  learn  the valid  assertions  in the  proper
+order.  That  way, we  can indeed formalize  the cyc plans.   It would
+help to obtain a small corpus of existing cyc plans.
+
+

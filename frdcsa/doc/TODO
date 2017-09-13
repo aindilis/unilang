@@ -1,0 +1,177 @@
+
+moodle deb for classes
+
+Need to get thorough introduction to statistics and game theory   
+
+radar should have the ability to index things like CPAN, the Debian
+   sources, rpmfind, etc.  All such collections.
+
+A system to track who has done what, in order to build models of
+   reputation and expertise.   
+
+   use the guide to project management to extract a definition of project.
+
+   Perhaps consider  expert system interface  to how it  decides where
+   statements go.
+
+Can know what is appropriate to ask on certain internet sites, and how
+   to do  it, a sort of  reverse IRC bot, or  whatever, (also includes
+   websites).   This I  suppose  works  best if  you  can have  social
+   intelligence  already factored  in.  Social  intelligence  needs to
+   interact with other aspects in  order to work well.  You could have
+   social intelligence interact with unclassified (or in special cases
+   classified) data, and then  have it generate planned actions, which
+   the  user  then approves.   I.E.   by  defining  the right  set  of
+   interfaces,  the  system would  start  to  behave  in a  reasonable
+   manner.
+
+Right now it  seems to me that the major stumbling  block of all these
+   projects is KBFS, or  more generally, that reasoning component that
+   we've been  looking for.  This seems  to me to  be Crouching Tiger,
+   Hidden Dragon, because the reasoning component is so sophisticated
+   that it would be silly.
+
+Tell  Ramadev that he  is invited  to come  to pittsburgh,  although I
+   would appreciate it if he kept the invitation secret.  Mention that
+   there are  few places  with a better  Robotics platform and  that I
+   could  give  him  a  hand  up  in getting  efficiently  set  up  in
+   Pittsburgh.  Also,  if he wanted,  I am interested in  getting some
+   Robots going if  he is, and also interested in  making sure that he
+   gets to work on developing control algorithms.  Of course, he could
+   always volunteer  to work  on Sandstorm, CMU's  entry to  the DARPA
+   grand challenge, which I expect has a good chance of winning, which
+   in addition  to a great  learning experience, might also  be resume
+   material if he is looking for  that kind of stuff.  In addition, we
+   are working on AI and  we need assistance in bringing this critical
+   capability to the  world.  A person with his  capabilities would be
+   much valued here.  Also, mention  I wondered whether he was working
+   on  UAV's at all,  and if  he is  knowledgeable in  their cognitive
+   modelling aspects.  Mention  that if he comes here,  people are all
+   pretty busy and isolated on their  own projects, so it would have a
+   sort of  campus feel to it.  In  other words he could  expect to be
+   left  alone.  In  certain cases  where multiple  people  or certain
+   skills are needed this might  be coordinated.  Lastly, if women are
+   an issue, the  larger University of Pittsburgh has  a great draw of
+   attractive women.
+
+ But also, we would not be limited to a commercial focus
+   which can stifle good work.
+
+It may be useful to keep in mind what we might believe an optimal user
+   would  do.   Even though  it  can't be  done  for  lack of  certain
+   capabilities presently, it might help to see where you're going
+   with certain things if you do so.
+
+Should try to focus on the pragmatic aspects of UniLang, instead of
+   the more difficult to define aspects.
+
+I notice that there is some desire within me to evidence my successes
+   with AI to other people.  There is also an expectation that they
+   would not understand them, and would remain set in their ways,
+   whatever those are.  Most people are not helping with this.   This
+   desire is probably a bad habit.
+
+There are probably some knowledge engineering techniques that help you
+   to  automatically   refactor  your  knowledge   into  more  useful,
+   compressed  fashion.   In  fact,  compression is  related  to  this
+   problem, isn't it.
+
+For  a given  desired capability,  analyze in  what  respects existing
+   software can and cannot satisfy it.  For instance, with the project
+   definition of Gourmet, analyze the relative strengths and
+   weaknesses of Nut, Gnutrition, etc.
+   
+knoppix-customize does some customization without remastering   
+rewrite Shoppix into Generix, a tools to remaster knoppix CDs. There
+   seems to be a GUI called remaster that does this.   
+
+use Test::Simple suite to automatically test programs.
+
+"trap" information, before uniformly sending it.   
+
+Scan  existing logs,  or really,  tasks, for  those that  other people
+   might  find  interesting,  and  send  them their  way.   Make  sure
+   however, to avoid giving unnecessary information away, in doing
+   so.  In other words, implement an axiom counter, and ensure
+   planning is done in a way that minimizes "throwing information to
+   the winds".
+
+   General purpose simulators of people backed on empirical data.
+   This brings to mind things like Act-R and IKanias.
+
+Automatic dispatching of tasks to people who are capable/interested
+   in the task.  Therefore, again, at some other level, reason about
+   what people are interested in.   
+
+People's preferences  cannot be statically summed, but  are valid only
+   in an  inferential sense.  In  other words, people's  mental states
+   are complex.  Specifically, find or create software to reason about
+   people's mental states.
+
+Install all  possible perl applications, and then  analyze their files
+   to determine which concepts are  most important to study, and which
+   are  less  important.   Also  do some  utility  calculations  about
+   importance  based on  importance of  applications  themselves.  For
+   instance, don't go only by  quantity, but also by the reputation of
+   the program itself.
+
+Add ability to treat certain statements as axioms, or law, or policy.
+   So for instance, it forms a hierarchy.
+
+Add ability to add information to documentation or readme or, whatever
+   of certain files.  Represent the contents of certain files as being
+   represented by my statements.  Whenever a statement is add it,
+   version control it.
+
+Should be able to reason and query over statements, etc.   
+
+Generate plans of actions to perform, require approval for certain
+   types of information.
+   
+Run social calculations that are relevant anytime information is being
+   sent to  other people.   Automatically translate.  Don't  tell them
+   things  that  are socially  bad.   Automatically compute  political
+   capital.  Make social network calculations.
+
+Scan  incoming information  for how  it affects  certain  things.  For
+   instance, put information  that I don't want to  hear into a unique
+   classification, but  do not  stop this information  from correcting
+   inferences, etc, of mine.  I.e.   do not let me erroneously think a
+   given person likes me.
+
+Tue Mar 23 15:09:44 EST 2004
+Should set status automatically.  Should be self documenting.  Should
+   allow users to automatically add new functionality, or to
+   interactively rate things, etc. etc.
+   
+For Unilang, ought to have some parsing, eh?
+I actually think this can improve things, because we will develop to
+   such a sophistication using this.  I think some people feign
+   sophistication which is not there.
+
+
+In the future, we should  have task completion bars for complex tasks.
+   Like,  if  we say,  make  a  personal's  website with  astrological
+   calculations,  we can  just watch  task completion  graphs  that go
+   across the screen for all tasks, as they are done, and as resources
+   are devoted to accomplishing those tasks.
+
+Here are the issues as of Tue Mar 23 06:29:20 EST 2004
+
+Right now it does no intelligent parsing, so that needs to be added.
+   
+The class parser is not really the parser, so this will change.
+
+The system for addressing modules has to be improved.
+
+The system for acting on commands to modules must get better.
+
+Need to add functionality to properly quit, and properly call
+   functions in general.
+
+Need to eventually split all the files.
+
+I  should probably  finish this  now to  the point  where it  could be
+   useful.  This includes fixing the logfile mechanism, adding the
+   ability to intelligently select logfiles, and also creating a bunch
+   of modules for actual use.

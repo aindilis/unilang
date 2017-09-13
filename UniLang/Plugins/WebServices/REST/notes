@@ -1,0 +1,8 @@
+Failed during this command:
+ AGENT/WWW-OpenResty-0.09.tar.gz              : make_test NO
+ DMAKI/Memcached-libmemcached-0.3102.tar.gz   : writemakefile NO -- No 'Makefile' created
+
+ DMAKI/Cache-Memcached-libmemcached-0.02010.tar.gz: make_test NO
+ LDS/GD-2.44.tar.gz                           : writemakefile NO '/usr/bin/perl Makefile.PL INSTALLDIRS=site' returned status 512
+ BURAK/GD-SecurityImage-1.70.tar.gz           : make_test NO
+ AGENT/OpenResty-0.5.11.tar.gz                : make_test NO 3 dependencies missing (Cache::Memcached::libmemcached,WWW::OpenResty,GD::SecurityImage)

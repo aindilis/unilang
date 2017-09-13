@@ -1,0 +1,16 @@
+;; Object unilang/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "unilang/"
+  :tables (list 
+   (semanticdb-table "ushell.el"
+    :major-mode 'emacs-lisp-mode
+    :tags '(("setq" code nil nil [1836 1872]) ("setq" code nil nil [1874 2086]) ("ushell" function (:user-visible-flag t :arguments ("&optional" "arg")) nil [2103 3634]) ("join" function (:arguments ("separator" "list")) nil [3636 3850]) ("global-set-key" code nil nil [3897 3937]) ("global-set-key" code nil nil [3938 3981]) ("uea-connect" function (:user-visible-flag t :arguments ("&optional" "host" "port")) nil [3983 4342]) ("uea-disconnect" function (:user-visible-flag t :arguments ("&optional" "host" "port")) nil [4344 4527]) ("uea-unregister" function (:user-visible-flag t) nil [4529 4642]) ("uea-register" function (:user-visible-flag t) nil [4644 4753]) ("uea-test-message" function (:user-visible-flag t) nil [4755 4875]) ("uea-send-message" function (:user-visible-flag t :arguments ("message" "&optional" "recipient")) nil [4899 5288]) ("uea-xmlify-message" function (:arguments ("message")) nil [5290 5620]) ("uea-receive-message" function (:arguments ("process" "output")) nil [5622 6174]) ("uea-process-contents" function (:arguments ("id" "sender" "receiver" "date" "contents")) nil [6176 6454]))
+    :file "ushell.el"
+    :pointmax 6455
+    :unmatched-syntax 'nil
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0beta3"
+  :semanticdb-version "2.0beta3"
+  )

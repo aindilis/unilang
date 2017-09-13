@@ -1,0 +1,57 @@
+#!/usr/bin/perl -w
+
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+use BOSS::Config;
+
+$specification = "
+	-n <name>		The agent name
+
+	-u [<host> <port>]	Run as a UniLang agent
+";
+
+$config = BOSS::Config->new
+  (Spec => $specification,
+   ConfFile => "");
+my $conf = $config->CLIConfig;
+
+my $agent = UniLang::Agent::Agent->new
+  (
+   Name => $conf->{'-n'} || "UniLang-Client",
+   ReceiveHandler => \&Receive,
+  );
+
+if (exists $conf->{-u}) {
+  $agent->Register
+    (
+     Host => defined $conf->{-u}->{'<host>'} ?
+     $conf->{-u}->{'<host>'} : "localhost",
+     Port => defined $conf->{-u}->{'<port>'} ?
+     $conf->{-u}->{'<port>'} : "9000",
+    );
+} else {
+  $agent->Register
+    (
+     Host => "localhost",
+     Port => "9000",
+    );
+}
+
+sub Receive {
+  my %args = @_;
+  my $message = $args{Message};
+  if ($message->{Contents} =~ /^(quit|exit)$/i) {
+    $agent->Deregister;
+    exit(0);
+  } elsif ($message->{Sender} eq "Corpus") {
+    print "\t[".$message->{Contents}."]\n\n";
+  } elsif (exists $message->Data->{_UniLangClientDisplayOnlyContents}) {
+    print $message->Contents."\n";
+  } else {
+    print $message->Generate;
+  }
+}
+
+$agent->Listen();
+

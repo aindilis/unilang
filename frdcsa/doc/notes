@@ -1,0 +1,9 @@
+Here is how to setup the unilang system.
+
+How do we view the output of any agent?  For debugging purposes.  Tail agent logs, redirect standard input and output.
+How to do this without becoming root? make alternative directory for these things
+How do we restart agents without manually doing all those things.  /etc/init.d/agent restart
+How do we have them automatically deregister once they are terminated? code in unilang
+
+
+Write sample perl daemon

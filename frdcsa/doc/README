@@ -1,0 +1,48 @@
+THE UNILANG MOTTO:  NO SOONER SAID THAN DONE
+
+There is  no better reference that  I have seen for  this project than
+this: http://www.cs.pitt.edu/~litman/courses/cs3710/cs3710.html
+
+A good  attempt at the universal  language: here is  a starting point:
+Should  not  necessarily  just  go  to cyc,  but  should  be  filtered
+universally of  course, for natural  language, etc.  First,  check all
+sublanguages  to which  it belongs,  then implement  further  tests to
+classify it.
+
+(some  interface concepts  are: make  it part  of eshell,  or  make it
+aishell.  very similar in some sense  to a chat bot, except that it is
+more  general,  can be  used  places  where  chat is  not  necessarily
+allowed.)
+
+(consider the similarities between it and MAS.)
+
+(request-for-capability 'string-p)
+(new-project 'project-name-p &optional )
+(new-subproject 'project-name-p 'existing-project-name-p)
+(subproject 'project-name-p 'project-name-p)
+(bug 'component-p 'string-p)
+(todo 'todo-item-p)
+(how do I find the name of so and so?)
+request-for-capability I need to get several things working at once.
+
+
+Another thing to do is gather  the thoughts and todo files as a corpus
+and then categorize these into actionable entities. # doing that as we
+speak.
+
+
+(brainstorm what do you think is the best agent architecture for my project?)
+(ask-friends anyone want to package it?)
+(get trash can and bags for my room)
+(vacuum room)
+(thought
+ (need to get an emacs mode for unilang)
+ (check for similar work to unilang))
+(todo
+ (continue learning object oriented perl)
+ (fix the C-M k problem with pc-sonicparts)
+ (fix /usr/sbin /sbin not in roots or anyone's path)
+ (fix pc-pcusa knoppix, not debian))
+(create unilang api for programs)
+(implement basic security lattice)
+(determine appropriate phrase dictionary)

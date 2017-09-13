@@ -1,0 +1,44 @@
+sender is S and recipient is R. 
+VKB means virtual knowledge base. 
+
+achieve - S wants R to make something true of their environment 
+advertise - S is particularly suited to processing a performative 
+ask-about - S wants all relevant sentences in R's VKB 
+ask-all - S wants all of R's answers to a question 
+ask-if - S wants to know if the sentence is in R's VKB 
+ask-one - S wants one of R's answers to a question 
+break - S wants R to break an established pipe 
+broadcast - S wants R to send a performative over all connections 
+broker-all - S wants R to collect all responses to a performative 
+broker-one - S wants R to get help in responding to a performative 
+deny - the embedded performative does not apply to S (anymore) 
+delete - S wants R to remove a ground sentence from its VKB 
+delete-all - S wants R to remove all matching sentences from its VKB 
+delete-one - S wants R to remove one matching sentence from its VKB 
+discard - S will not want R's remaining responses to a previous performative 
+eos - end of stream of responses to an earlier query 
+error - S considers R's earlier message to be malformed 
+evaluate - S wants R to simplify the sentence 
+forward - S wants R to route a performative 
+generator - same as a standby for stream-all 
+insert - S asks R to add content to its VKB 
+monitor - S wants updates to R's response to a stream-all 
+next - S wants R's next response to a previously mentioned performative 
+pipe - S wants R to route all all further performatives to another agent 
+ready - S is ready to respond to R's previously mentioned performative 
+recommend-all - S wants all names of agents who can respond to a performative 
+recommend-one - S wants the name of an agent who can respond to a performative 
+recruit-all - S wants R to get all suitable agents to respond to a performative 
+recruit-one - S wants R to get another suitable agent to respond to a performative 
+register - S can deliver performatives to some named agent 
+reply - communicates an expected reply 
+rest - S wants R's remaining responses to a previously mentioned performative 
+sorry - S cannot provide a more informative reply 
+standby - S want s R to be ready to respond to a performative 
+stream-about - multiple response version of ask-about 
+stream-all - multiple response version of ask-all 
+subscribe - S wants updates to R's response to a performative 
+tell - the sentence in S's VKB 
+transport-address - S associates a symbolic name with a transport address 
+unregister - a deny of a register 
+untell - the sentence is not in S's VKB.

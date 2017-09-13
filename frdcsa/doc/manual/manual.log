@@ -1,0 +1,33 @@
+This is pdfeTeX, Version 3.141592-1.21a-2.2 (Web2C 7.5.4) (format=jadetex 2006.5.23)  23 MAY 2006 14:14
+entering extended mode
+**manual.tex
+(./manual.tex
+JadeTeX 2003/04/27: 3.13
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 1.
+(/usr/share/texmf-tetex/tex/latex/psnfss/t1ptm.fd
+File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
+)
+Elements will be labelled
+
+! LaTeX Error: Missing \begin{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.7     U
+         niLang: Universal Language
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[1.0.35] (./manual.aux) ) 
+Here is how much of TeX's memory you used:
+ 52 strings out of 42677
+ 782 string characters out of 320011
+ 239397 words of memory out of 1085000
+ 13473 multiletter control sequences out of 10000+32500
+ 6843 words of font info for 19 fonts, out of 500000 for 2000
+ 580 hyphenation exceptions out of 8191
+ 20i,11n,42p,185b,237s stack positions out of 1500i,500n,1500p,200000b,5000s
+
+Output written on manual.dvi (1 page, 9800 bytes).

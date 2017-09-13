@@ -1,0 +1,7 @@
+#!/bin/sh
+
+./ssl_server.pl &
+sleep 1
+./ssl_client.pl &
+sleep 3
+killall ssl_server.pl

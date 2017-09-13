@@ -1,0 +1,32 @@
+
+UniLang: Universal Language
+
+Andrew Dougherty
+     _________________________________________________________________
+
+   Table of Contents
+   1. [1]What is UniLang?
+
+        [2]Overview
+     _________________________________________________________________
+
+Chapter 1. What is UniLang?
+
+Overview
+
+   UniLang is an attempt to speed interaction by providing a common
+   format to all communications. For instance, if you type in a SubL
+   expression, it will be routed to Cyc. If you type in a question, it
+   will be sent to the best question answering service. If you write down
+   a todo item, it will be entered into the apropriate plan.
+
+   It is an extension of eshell, the emacs shell, which already lets you
+   either run shell or emacs commands in a convenient format.
+
+   It integrates with many of the existing applications that we are
+   developing, such as Manager, PSE, Audience and so on.
+
+References
+
+   1. file://localhost/home/jasayne/frdcsa/source/unilang/doc/dump.html#AEN8
+   2. file://localhost/home/jasayne/frdcsa/source/unilang/doc/dump.html#overview

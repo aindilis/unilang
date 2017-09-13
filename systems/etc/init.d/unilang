@@ -1,0 +1,37 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          unilang
+# Required-Start:    
+# Required-Stop:     
+# Default-Start:     
+# Default-Stop:      0 6
+# Short-Description: FRDCSA Multi-Agent Interprocess System
+### END INIT INFO
+
+PATH="/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin"
+
+[ -x /var/lib/myfrdcsa/codebases/internal/unilang/start ] || exit 0
+
+. /lib/lsb/init-functions
+
+case "$1" in
+start)
+	setuid <USERNAME> /var/lib/myfrdcsa/codebases/internal/unilang/start -s -u localhost 9000 -c &
+	;;
+
+stop)
+	ps aux | grep /var/lib/myfrdcsa/codebases/internal/unilang | awk '{print $2}' | xargs kill -9
+	;;
+
+force-reload|restart)
+	ps aux | grep /var/lib/myfrdcsa/codebases/internal/unilang | awk '{print $2}' | xargs kill -9
+	setuid <USERNAME> /var/lib/myfrdcsa/codebases/internal/unilang/start -s -u localhost 9000 -c &
+	;;
+
+*)
+	echo "Usage: /etc/init.d/unilang {start|stop|restart|force-reload}"
+	exit 1
+	;;
+esac
+
+exit 0

@@ -1,0 +1,10 @@
+#!/usr/bin/perl -w
+
+use Data::Dumper;
+
+use UniLang::Util::TempAgent;
+
+my $agent = UniLang::Util::TempAgent->new;
+
+$agent->MyAgent->SendContents
+     (Contents => join(" ",@ARGV))

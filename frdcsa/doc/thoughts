@@ -1,0 +1,69 @@
+Here are some of the features needed:
+
+Interaction manager,  so for instance,  say RADAR wants to  check with
+the user about something, should the user be notified.
+
+Also, modules need to have  a well defined behaviour, for instance, if
+we ask RADAR  to ammortize its requests, instead  of checking in every
+so  often.   This  could  be  done by  setting  certain  communication
+permissions, severity levels,  etc.  All of this should  be handled by
+some sort  of interactive  planner.  So, different  message priorities
+should be considered.
+
+Perhaps should consider the work of the Radar, Calo, and Pal projects,
+which no doubt have considered these things.  Should make links to AFS
+dirs for these.
+
+An incidental  advantage of this  design, or an exapted  advantage, or
+just more  evidence of its  correct layout, is  that this tool  can be
+used to manage threads of  thought.  For instance, I was thinking that
+I add to my other document  (which I'm not supposed to because writing
+to  justify myself  to others  is considered  a bad  habit),  but that
+because  I lack  certain  abilities, that  it  makes it  extraordinary
+complex  and difficult  for me  to implement  them, (because  they are
+almost necessary to  be able implement themselves -  chicken and egg.)
+But then, on  the other hand once this gets done,  you have in essence
+done all  this difficult,  important work which  now results  in great
+abundance and well-being  - like the politician who  works his way up.
+Only,     there     is    no     fear     of     the    results     of
+succession!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! because its a
+program and never dies of old age.
+
+So, I suppose there is a large KB end to this, anchoring thoughts into
+KBs, translation, the works.  Meaning  that since those are related to
+organization of thought there is a certain necessary connection there.
+Maybe a stipulation  ought to be that in all but  very rare cases, the
+thought must be associated with a FORMAL expression of its meaning.  A
+semantic web.
+
+################################################################################
+
+# this is a MAS
+
+# this is work  now on making sure that the log  files are safe.  That
+# is  probably most  important.   Analysis of  logfiles that  happened
+# before the  system was completely erected can  now, quite naturally,
+# be  rerun through the  system in  order to  have it  reallocate that
+# information.  There should  therefore before unique identifiers that
+# allow  it  to  extract  the   existing  assertion  for  a  piece  of
+# information, and reinsert it properly.  You can see I am treating my
+# very notes as  if they were the powerful UniLang  itself.  Oh boy oh
+# boy.
+
+# New tool  for people  who think in  stream of consciousness.   We have
+# implemented this tool which parses a dialog with a person and puts the
+# information  they generate  into the  proper location,  and formalizes
+# parts of it, and combines this  with a planner, to make sure that they
+# achieve what they say, or if not, can at least record in a correct and
+# intelligent manner.
+#
+# This is a great tool for those who generate great amounts of writings,
+# like Autists, Schizophrenics, and so forth.
+#
+# The  unique   and  powerful  capabilities  that  it   allows  are  not
+# coincidental,  they  are part  of  a  very  large integrated  research
+# project  into AI that  was initiated  5 years  ago as  a result  of my
+# abnormalities and  brain dysfunction, as  well as the  unique insights
+# into  actual functioning that  I was  forced to  make by  lacking, but
+# being  held  to  the  same  standard  as  neurotypicals  for,  certain
+# abilities.

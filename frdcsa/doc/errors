@@ -1,0 +1,37 @@
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+
+--------------------------------------------------------------------------------
+
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+
+--------------------------------------------------------------------------------
+
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+Event: '?? Agent.pm:185' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 202
+
+--------------------------------------------------------------------------------
+
+Add the ability to Clear to translate mathematical symbols into their English equivalent and read aloud.  i.e. "For any F , suppose that there exists some Z with {F} ∪ Z = Z1 if and only if there also exists some Z such that {F} ∪ Z = Z2. Then F ∈ Z1" should get translated into whatever is appropriate.  This should be enabled by some flag, has_math or something, of which there could be many kinds for the many different symbol systems in use, and could be automatically detected.
+
+not well-formed (invalid token) at line 6, column 228, byte 363 at /usr/lib/x86_64-linux-gnu/perl5/5.20/XML/Parser.pm line 187.
+ at /usr/share/perl5/UniLang/Util/Message.pm line 65.
+Event: '?? Agent.pm:213' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 233.
+Event: '?? Agent.pm:213' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 231.
+Event: '?? Agent.pm:213' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 231.
+Event: '?? Agent.pm:213' was unexpectedly closed at /usr/share/perl5/UniLang/Agent/Agent.pm line 231.
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------
+
+
+
+--------------------------------------------------------------------------------

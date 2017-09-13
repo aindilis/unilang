@@ -1,0 +1,95 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+use MyFRDCSA;
+
+$specification = q{
+	-t <type>		Server type (SOAP,SSH,REST,XMLRPC,etc)
+
+	-h <host>		Web service host
+	-p <port>		Web service port
+
+	-u [<host> <port>]	Run as a UniLang agent
+	-W [<delay>]		Exit as soon as possible (with optional delay)
+};
+
+# $UNIVERSAL::systemdir = ConcatDir(Dir("internal codebases"),"unilang");
+my $config = BOSS::Config->new
+  (
+   Spec => $specification,
+   # ConfFile => ConcatDir($UNIVERSAL::systemdir,"data","server.conf"),
+  );
+my $conf = $config->CLIConfig;
+$UNIVERSAL::conf = $conf;
+
+# sort out this silly hostname stuff
+my $wshost = `hostname -f`;
+chomp $wshost;
+my $hostnametable = {
+		     "box.posithon.org" => "posithon.org",
+		     "columcille" => "192.168.1.80",
+		    };
+if (exists $hostnametable->{$wshost}) {
+  $wshost = $hostnametable->{$wshost};
+}
+
+my $host = $conf->{'-u'}->{'<host>'} || "localhost",
+my $port = $conf->{'-u'}->{'<port>'} || "9000";
+if (exists $conf->{'-h'}) {
+  $wshost = $conf->{'-h'};
+}
+my $wsport = $conf->{'-p'} || "10000";
+
+if (exists $conf->{'-t'}) {
+  my $server;
+  my $type = $conf->{'-t'};
+  if ($type eq "SOAP") {
+    require UniLang::Plugins::WebServices::SOAP::Server::SOAPWSDL;
+    $server = UniLang::Plugins::WebServices::SOAP::Server::SOAPWSDL->new
+      (
+       Name => "WS-Server-SOAP",
+       Host => $host,
+       Port => $port,
+       WSHost => $wshost,
+       WSPort => $wsport,
+      );
+  } elsif ($type eq "SSH") {
+    print "SSH server not yet implemented\n";
+    # require UniLang::Plugins::WebServices::SSH::Server::???;
+    # $server = UniLang::Plugins::WebServices::SSH::Server::???->new
+    #  (
+    #   Name => "WS-Server-SSH",
+    #   Host => $host,
+    #   Port => $port,
+    #   WSHost => $wshost,
+    #   WSPort => $wsport,
+    #  );
+  } elsif ($type eq "REST") {
+    require UniLang::Plugins::WebServices::REST::Server::OpenResty;
+    $server = UniLang::Plugins::WebServices::REST::Server::OpenResty->new
+      (
+       Name => "WS-Server-REST",
+       Host => $host,
+       Port => $port,
+       WSHost => $wshost,
+       WSPort => $wsport,
+      );
+  } elsif ($type eq "XMLRPC") {
+    require UniLang::Plugins::WebServices::XMLRPC::Server::RPCXML;
+    $server = UniLang::Plugins::WebServices::XMLRPC::Server::RPCXML->new
+      (
+       Name => "WS-Server-XMLRPC",
+       Host => $host,
+       Port => $port,
+       WSHost => $wshost,
+       WSPort => $wsport,
+      );
+  }
+  if (defined $server) {
+    $server->Start;
+  } else {
+    print "Server not defined\n";
+  }
+}
+
+

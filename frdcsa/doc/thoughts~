@@ -1,0 +1,125 @@
+(Chelitis: This is  crusting and cracking which occurs  in the corners
+of the  mouth.  It is  caused by a  fungus and anti-fungal  creams are
+usually curative.)
+
+Here are some of the features needed:
+
+Interaction manager,  so for instance,  say RADAR wants to  check with
+the user about something, should the user be notified.
+
+Also, modules need to have  a well defined behaviour, for instance, if
+we ask RADAR  to ammortize its requests, instead  of checking in every
+so  often.   This  could  be  done by  setting  certain  communication
+permissions, severity levels,  etc.  All of this should  be handled by
+some sort  of interactive  planner.  So, different  message priorities
+should be considered.
+
+Perhaps should consider the work of the Radar, Calo, and Pal projects,
+which no doubt have considered these things.  Should make links to AFS
+dirs for these.
+
+An incidental  advantage of this  design, or an exapted  advantage, or
+just more  evidence of its  correct layout, is  that this tool  can be
+used to manage threads of  thought.  For instance, I was thinking that
+I add to my other document  (which I'm not supposed to because writing
+to  justify myself  to others  is considered  a bad  habit),  but that
+because  I lack  certain  abilities, that  it  makes it  extraordinary
+complex  and difficult  for me  to implement  them, (because  they are
+almost necessary to  be able implement themselves -  chicken and egg.)
+But then, on  the other hand once this gets done,  you have in essence
+done all  this difficult,  important work which  now results  in great
+abundance and well-being  - like the politician who  works his way up.
+Only,     there     is    no     fear     of     the    results     of
+succession!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! because its a
+program and never dies of old age.
+
+So, I suppose there is a large KB end to this, anchoring thoughts into
+KBs, translation, the works.  Meaning  that since those are related to
+organization of thought there is a certain necessary connection there.
+Maybe a stipulation  ought to be that in all but  very rare cases, the
+thought must be associated with a FORMAL expression of its meaning.  A
+semantic web.
+
+################################################################################
+
+# this is a MAS
+
+# this is work  now on making sure that the log  files are safe.  That
+# is  probably most  important.   Analysis of  logfiles that  happened
+# before the  system was completely erected can  now, quite naturally,
+# be  rerun through the  system in  order to  have it  reallocate that
+# information.  There should  therefore before unique identifiers that
+# allow  it  to  extract  the   existing  assertion  for  a  piece  of
+# information, and reinsert it properly.  You can see I am treating my
+# very notes as  if they were the powerful UniLang  itself.  Oh boy oh
+# boy.
+
+# New tool  for people  who think in  stream of consciousness.   We have
+# implemented this tool which parses a dialog with a person and puts the
+# information  they generate  into the  proper location,  and formalizes
+# parts of it, and combines this  with a planner, to make sure that they
+# achieve what they say, or if not, can at least record in a correct and
+# intelligent manner.
+#
+# This is a great tool for those who generate great amounts of writings,
+# like Autists, Schizophrenics, and so forth.
+#
+# The  unique   and  powerful  capabilities  that  it   allows  are  not
+# coincidental,  they  are part  of  a  very  large integrated  research
+# project  into AI that  was initiated  5 years  ago as  a result  of my
+# abnormalities and  brain dysfunction, as  well as the  unique insights
+# into  actual functioning that  I was  forced to  make by  lacking, but
+# being  held  to  the  same  standard  as  neurotypicals  for,  certain
+# abilities.
+#
+# Ask Rachel if  she can pick me up some slippers,  and cheap ear muffs,
+# if possible, with my credit card.
+#
+# Dear  Al, 
+#
+#   I  have had  some good  success with  my system  here, it  is really
+# taking  off. Of  course it  will still  be a  while, but  I  wanted to
+# mention some things.
+#
+#   In telling  Rachel about how it  took 10 years to  solve the Sussman
+# anomoly, that is, that thing with blocks C, B on A, an you want A on B
+# on C, and it does it  suboptimally with linear planning, I realized an
+# argument that  illustrates the mentality  that was in  dispute between
+# Jason and I.
+#
+#   I told  her that  at first  I didn't realize  that toy  domains like
+# blocks  world were  themselves the  objects of  open problems.   I had
+# assumed only that they illustrated points about planning.
+#
+#   I told  her about  the Sussman  anomoly, as well  as the  failure of
+# linear  solvers to  solve the  UPS World,  where you  have to  fly two
+# objects to another airport, but that linear planners naively would fly
+# only one object at a time, and couldn't solve the problem because they
+# would run out of gas, because of the way they treated the relationship
+# between operators and world state.
+#
+#   In describing  these, I said  that, while they seem  simplistic, the
+# actual problems that  affect us now are no less  simplistic and from a
+# viewpoint  of  a sufficiently  intelligent  being,  they  are just  as
+# simplistic as the toy problems.
+#
+#   I tolder her that my  intention was to eliminate these problems, and
+# I mentioned  about how  animals for instance  will eat each  other.  I
+# told her that  I watched things like  that to remind me that  it is no
+# different outside  of our  doors.  I said  I was against  all predator
+# activity.
+#
+#   I said for instance, when I told Jason that with AI, everybody could
+# be a  grandmaster, he said  but what does  that get you.  I  said, and
+# then  I realized the  exact truth  in it,  that this  illustrates that
+# Jason  has no  concern except  a predatory  one.  In  other  words, he
+# doesn't have  to run faster than the  bear, he has only  to run faster
+# than the other person.
+#
+#   I realized this  exactly explains the mentality, and  that he had no
+# concern about  the racing bear, i.e.  the store closing,  only that he
+# himself was OK.
+#
+#   This then leads me to finally  understand that my concern for him is
+# not reciprocated.   There is a lot  of truth in  these statements.  At
+# long last, I have come to mathematical understanding of this topic.

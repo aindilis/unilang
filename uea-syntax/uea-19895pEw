@@ -1,0 +1,54 @@
+Connection closed by foreign host.
+telnet: Unable to connect to remote host: Connection refused
+Trying 127.0.0.1...
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+<message>
+  <id>1</id>
+  <sender>NLU</sender>
+  <receiver>Emacs-Client</receiver>
+  <date>Thu Dec  2 09:31:58 CST 2010</date>
+  <contents></contents>
+  <data>$VAR1 = {
+          '_DoNotLog' => 1,
+          'Result' => {
+                        'need#v#3' => 'have or feel a need for; "always needing friends and money"  ',
+                        'need#v#1' => 'require as useful, just, or proper; "It takes nerve to do what she did"; "success usually requires hard work"; "This job asks a lot of patience and skill"; "This position demands a lot of personal sacrifice"; "This dinner calls for a spectacular dessert"; "This intervention does not postulate a patient\'s consent"  ',
+                        'need#n#4' => 'a state of extreme poverty or destitution; "their indigence appalled him"; "a general state of need exists among the homeless"  ',
+                        'need#n#1' => 'a condition requiring relief; "she satisfied his need for affection"; "God has no need of men to accomplish His work"; "there is a demand for jobs"  ',
+                        'need#n#3' => 'the psychological feature that arouses an organism to action toward a desired goal; the reason for the action; that which gives purpose and direction to behavior; "we did not understand his motivation"; "he acted with the best of motives"  ',
+                        'need#n#2' => 'anything that is necessary but lacking; "he had sufficient means to meet his simple needs"; "I tried to supply his wants"  ',
+                        'need#v#2' => 'have need of; "This piano wants the attention of a competent tuner"  '
+                      }
+        };
+</data>
+</message>
+<message>
+  <id>1</id>
+  <sender>UniLang</sender>
+  <receiver>Emacs-Client</receiver>
+  <date>Thu Dec  2 09:32:16 CST 2010</date>
+  <contents></contents>
+  <data>$VAR1 = {
+          '_DoNotLog' => 1,
+          '_Ping' => 1
+        };
+</data>
+</message>
+<message>
+  <id>1</id>
+  <sender>UniLang</sender>
+  <receiver>Emacs-Client</receiver>
+  <date>Thu Dec  2 09:32:43 CST 2010</date>
+  <contents></contents>
+  <data>$VAR1 = {
+          '_DoNotLog' => 1,
+          '_Ping' => 1
+        };
+</data>
+</message>
+Connection closed by foreign host.
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.

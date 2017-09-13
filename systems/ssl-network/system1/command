@@ -1,0 +1,1 @@
+openssl req -new -x509 -keyout newreq.pem -out newreq.pem -days 365

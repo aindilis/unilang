@@ -1,0 +1,83 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+use MyFRDCSA;
+
+use Data::Dumper;
+
+$specification = q(
+	-t <type>		Client type (SOAP,SSH,REST,XMLRPC,etc)
+
+	-u [<host> <port>]	Run as a UniLang agent
+);
+
+# $UNIVERSAL::systemdir = ConcatDir(Dir("internal codebases"),"unilang");
+
+my $config = BOSS::Config->new
+  (
+   Spec => $specification,
+   # ConfFile => ConcatDir($UNIVERSAL::systemdir,"data","client.conf"),
+  );
+my $conf = $config->CLIConfig;
+
+my $host = $conf->{'-u'}->{'<host>'} || "localhost";
+my $port = $conf->{'-u'}->{'<port>'} || "9000";
+
+if (exists $conf->{'-t'}) {
+  my $client;
+  my $type = $conf->{'-t'};
+  if ($type eq "SOAP") {
+    require UniLang::Plugins::WebServices::SOAP::Client::SOAPLite;
+    $client = UniLang::Plugins::WebServices::SOAP::Client::SOAPLite->new
+      (
+       Name => "WS-Client-SOAP",
+       RemoteHost => $host,
+       RemotePort => $port,
+      );
+  } elsif ($type eq "SSH") {
+    print "SSH client not yet implemented\n";
+    # require UniLang::Plugins::WebServices::SSH::Client::???;
+    # $client = UniLang::Plugins::WebServices::SSH::Client::???->new
+    #  (
+    #   Name => "WS-Client-SSH"),
+    #   RemoteHost => $host,
+    #   RemotePort => $port,
+    #  );
+  } elsif ($type eq "REST") {
+    require UniLang::Plugins::WebServices::REST::Client::RESTClient;
+    $client = UniLang::Plugins::WebServices::REST::Client::RESTClient->new
+      (
+       Name => "WS-Client-REST",
+       RemoteHost => $host,
+       RemotePort => $port,
+      );
+  } elsif ($type eq "XMLRPC") {
+    require UniLang::Plugins::WebServices::XMLRPC::Client::XMLRPCLite;
+    $client = UniLang::Plugins::WebServices::XMLRPC::Client::XMLRPCLite->new
+      (
+       Name => "WS-Client-XMLRPC",
+       RemoteHost => $host,
+       RemotePort => $port,
+      );
+  }
+  if (defined $client) {
+    $client->Start;
+  }
+  # send a message to the http server
+
+  $client->WSSendContents
+    (
+     Contents => "hello",
+     Data => {
+	      _DoNotLog => 1,
+	     },
+    );
+  print Dumper
+    ($client->WSQueryAgent
+     (
+      Contents => "Echo, hi there",
+      Data => {
+	       _DoNotLog => 1,
+	      },
+     ));
+}

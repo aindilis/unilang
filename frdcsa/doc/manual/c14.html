@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>&#13;      Ontology of Software System Distribution States
+    </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="
+    MyFRDCSA: Application Traffic Controller
+  "
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="What is MyFRDCSA?"
+HREF="c8.html"><LINK
+REL="NEXT"
+TITLE="
+      MyFRDCSA Structure
+    "
+HREF="c29.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>MyFRDCSA: Application Traffic Controller</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c8.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c29.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="AEN14"
+></A
+>Chapter 2. 
+      Ontology of Software System Distribution States
+    </H1
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN16"
+>Types</A
+></H1
+><P
+>&#13;	There  are several  different types  of software  systems that
+	MyFRDCSA has to  deal with effectively.  At this  time Thu Jan
+	29 21:47:19 EST 2004,  there are: {locally developed software,
+	existing debian packages,  other system packages, and upstream
+	software} Of  upstream software, we would  like to distinguish
+	based on license type.  We  figure, if we've found the system,
+	and if  it checks  out as being  worthwhile, we would  like to
+	make  its  functionality  available.   If  it is  able  to  be
+	packaged  for  Debian  immediately,  great.   If  it  contains
+	licensing  problems we  will  research these  and contact  the
+	appropriate groups  to determine  if they can  relicense their
+	software  to be  free.  If  it cannot  be relicensed,  we will
+	engage  in a  legal  method  of attempting  to  create a  free
+	version   of  it,   where   possible.   If   it  is   licensed
+	restrictively, we will probably keep it on record but will not
+	redistribute it.  We  will attempt if possible to  apply it to
+	the cause of free software,  a necessary evil.  But of course,
+	we will always  try to follow the policy  that has made Debian
+	among the purest and most capable systems available.
+      </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN19"
+>Upstream Software</A
+></H2
+><P
+>&#13;	  Upstream software  and locally developed  software must both
+	  be  made  into   Debian  packages.   Therefore,  the  actual
+	  machinery that makes these  ought to be treated differently.
+	  Therefore  RADAR primarily  handles  upstream software,  and
+	  whatever else handles locally developed software.
+	</P
+><P
+>&#13;	  For  both  of  these,   pbuilder  is  used  to  control  the
+	  environment.
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN23"
+>Midstream Software</A
+></H2
+><P
+>&#13;	  Locally  developed  software is  treated  no different  than
+	  upstream software, except  that the environment for creating
+	  it is provided.  Currently this  is one we have written, and
+	  we  are in  the  process of  modelling  the semantics  using
+	  OpenCyc.  However, since an object oriented model might also
+	  apply, I  might try  learning and using  UML for  this task.
+	  The  Debian  package  Gforge  is another  environment  which
+	  integrates  project management effectively.   We are  in the
+	  process of testing this to see whether it is suitable to our
+	  needs.
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN26"
+>Existing Debian Packages</A
+></H2
+><P
+>&#13;	  These  do not  need to  be packaged,  however, they  must be
+	  stored.  Work is ongoing.
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c8.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c29.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>What is MyFRDCSA?</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>MyFRDCSA Structure</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

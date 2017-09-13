@@ -1,0 +1,48 @@
+#!/usr/bin/perl -w
+
+use Getopt::Declare;
+use UniLang::Agent::Agent;
+use UniLang::Util::Message;
+
+use Data::Dumper;
+
+$specification = "
+	-u [<host> <port>]	Use this Host and Port for UniLang (but do not start)
+
+	-n <name>		The echo agent's name
+";
+
+my $conf = new Getopt::Declare($specification);
+
+my $agent = UniLang::Agent::Agent->new
+  (Name => $conf->{-n} || "Echo",
+   ReceiveHandler => \&Receive);
+$agent->DoNotDaemonize(1);
+
+sub Receive {
+  my %args = @_;
+  my $contents = $args{Message}->Contents;
+  if ($contents =~ /^(quit|exit)$/) {
+    $agent->Deregister;
+    exit(0);
+  } else {
+    $agent->SendContents
+      (
+       Receiver => $args{Message}->Sender,
+       Contents => $contents,
+      );
+  }
+}
+
+sub Start {
+  my $host = defined $conf->{-u}->{'<host>'} ? $conf->{-u}->{'<host>'} : "localhost";
+  my $port = defined $conf->{-u}->{'<port>'} ? $conf->{-u}->{'<port>'} : "9000";
+  $agent->Register
+    (
+     Host => $host,
+     Port => $port,
+    );
+  $agent->Listen;
+}
+
+Start;

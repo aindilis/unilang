@@ -1,0 +1,113 @@
+#!/usr/bin/perl -w
+
+# local $| = 1;
+
+use Getopt::Declare;
+use MyFRDCSA qw (ConcatDir Dir);
+use UniLang::Util::AgentRegistry;
+
+use Data::Dumper;
+
+my $specification = "
+	-u [<host> <port>]	Use this Host and Port for UniLang (but do not start)
+	-W [<delay>]		Exit as soon as possible (with optional delay)
+
+	-s			Start UniLang
+	-c 			Start Default Agents
+	-a [<agents>...]	Start Agents
+
+	-e <options>		Extra Options
+
+	--check <agent>		Check whether agent exists
+";
+
+
+my $conf = new Getopt::Declare($specification);
+my $stdoutwrapper = 0;
+my $tc = '/var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl "test: "';
+
+my $unilangoptions = "";
+if (exists $conf->{-u}) {
+  if (exists $conf->{-u}->{'<host>'} and exists $conf->{-u}->{'<port>'} and
+      defined $conf->{-u}->{'<host>'} and defined $conf->{-u}->{'<port>'}) {
+    $unilangoptions = "-u ".$conf->{-u}->{'<host>'}." ".$conf->{-u}->{'<port>'};
+  } else {
+    $unilangoptions = "-u";
+  }
+}
+
+if (exists $conf->{'-W'}) {
+  $unilangoptions .= ' -W';
+  if (defined $conf->{'-W'} and
+      $conf->{'-W'} =~ /^[\d\.]+$/ and
+      $conf->{'-W'} > 0) {
+    $unilangoptions .= ' '.$conf->{'-W'};
+  }
+}
+
+$UniLang::Util::AgentRegistry::unilangoptions = $unilangoptions;
+$UniLang::Util::AgentRegistry::extraoptions = $conf->{'-e'} || "";
+
+print Dumper({ExtraOptions => $UniLang::Util::AgentRegistry::extraoptions});
+
+my %AgentRegistry = %{GetAgentRegistry()};
+
+if (exists $conf->{'-s'}) {
+  my $testprog = ConcatDir(Dir("internal codebases"),"unilang","unilang")." -t";
+  my $prog = ConcatDir(Dir("internal codebases"),"unilang","unilang")." $unilangoptions";
+  if ($stdoutwrapper) {
+    # system "($prog | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl 'UniLang: ') &";
+    system "($prog | $tc) &";
+  } else {
+    system($testprog) == 0
+      or die "cannot launch: $prog";
+    system "$prog &";
+  }
+  sleep 2;
+}
+
+my $agentstostart = {};
+if (exists $conf->{'-a'}) {
+  foreach my $agent (@{$conf->{'-a'}}) {
+    $agentstostart->{$agent} = 1;
+  }
+}
+if (exists $conf->{'-c'}) {
+  # my @defaultagents = ("Manager", "WS-Server-XMLRPC");
+  my @defaultagents = qw(ELog WS-Server-XMLRPC);
+  foreach my $agent (@defaultagents) {
+    next if $agent eq "UniLang-Client";
+    $agentstostart->{$agent} = 1
+  }
+}
+foreach my $agent (keys %$agentstostart) {
+  if ($stdoutwrapper) {
+    # system "($AgentRegistry{$agent} | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl '$agent: ') &";
+    system "($AgentRegistry{$agent} | $tc) &";
+  } else {
+    # print "$AgentRegistry{$agent} &";
+    print Dumper
+      ({
+	Agent => $agent,
+	AgentRegistry => $AgentRegistry{$agent},
+       });
+    print "<<<$AgentRegistry{$agent}>>>\n";
+    system "$AgentRegistry{$agent} &";
+  }
+}
+if (exists $conf->{'-c'}) {
+  if ($stdoutwrapper) {
+    # system "$AgentRegistry{'UniLang-Client'} | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl 'UniLang-Client: '";
+    system "$AgentRegistry{'UniLang-Client'} | $tc";
+  } else {
+    system $AgentRegistry{'UniLang-Client'};
+  }
+}
+
+if (exists $conf->{'--check'}) {
+  if (exists $AgentRegistry{$conf->{'--check'}}) {
+    print "agent exists\n";
+  } else {
+    print "agent does not exist\n";
+  }
+}

@@ -1,0 +1,450 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML
+><HEAD
+><TITLE
+>&#13;      MyFRDCSA Structure
+    </TITLE
+><META
+NAME="GENERATOR"
+CONTENT="Modular DocBook HTML Stylesheet Version 1.7"><LINK
+REL="HOME"
+TITLE="
+    MyFRDCSA: Application Traffic Controller
+  "
+HREF="book1.html"><LINK
+REL="PREVIOUS"
+TITLE="
+      Ontology of Software System Distribution States
+    "
+HREF="c14.html"><LINK
+REL="NEXT"
+TITLE="
+      References
+    "
+HREF="c110.html"></HEAD
+><BODY
+CLASS="chapter"
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#840084"
+ALINK="#0000FF"
+><DIV
+CLASS="NAVHEADER"
+><TABLE
+SUMMARY="Header navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TH
+COLSPAN="3"
+ALIGN="center"
+>MyFRDCSA: Application Traffic Controller</TH
+></TR
+><TR
+><TD
+WIDTH="10%"
+ALIGN="left"
+VALIGN="bottom"
+><A
+HREF="c14.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="80%"
+ALIGN="center"
+VALIGN="bottom"
+></TD
+><TD
+WIDTH="10%"
+ALIGN="right"
+VALIGN="bottom"
+><A
+HREF="c110.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+></TABLE
+><HR
+ALIGN="LEFT"
+WIDTH="100%"></DIV
+><DIV
+CLASS="chapter"
+><H1
+><A
+NAME="AEN29"
+></A
+>Chapter 3. 
+      MyFRDCSA Structure
+    </H1
+><DIV
+CLASS="sect1"
+><H1
+CLASS="sect1"
+><A
+NAME="AEN31"
+>Description</A
+></H1
+><P
+>&#13;	The MyFRDCSA, as it is currently called, is the hub of package
+	creation.   It also handles  related functions.   This section
+	will illustrate how it works.
+      </P
+><P
+>&#13;	The  RADAR  system is  used  to  locate  and monitor  upstream
+	sources.  The Debian Gforge  package is installed and used for
+	locally  developed sources, and  it makes  some sense  that we
+	simply apply RADAR to these sources, and treat them equivalent
+	to  upstream  sources.   The  interface to  existing  packages
+	involves  RADAR,  and  again  it applies  to  RADAR  somewhat,
+	because RADAR  may find Debian packages.   However, there will
+	be special  functionality for reasoning about  the totality of
+	Debian packages  and their states of development  which is not
+	specific to RADAR.  This functionality is most likely produced
+	by either MyFRDCSA or another  system whose sole purpose is to
+	monitor  the state  of  packages.  Having  RADAR have  special
+	purpose modules for upstream sources, like apt-get.org, may or
+	may  not be useful.   I am  more inclined  to write  a special
+	package  which  is basically  a  knowledge  based system  that
+	tracks all information regarding apt-get sources on the web.
+      </P
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN35"
+>Tracking Apt-Get Sources</A
+></H2
+><P
+>&#13;	  While perhaps  this should  be considered technically  to be
+	  part of RADAR, there should be functionality that tracks the
+	  apt-get  sources.  Specifically  it  provides the  following
+	  features.
+	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		Crawling  the  web  and  receiving  hints  from  other
+		crawlers about online apt-get sources.
+	      </P
+></LI
+><LI
+><P
+>&#13;		Caching  of  contents of  online  apt-get sources  and
+		Packages files.
+	      </P
+></LI
+><LI
+><P
+>&#13;		A  scheme   to  retrieve  and  send   to  the  package
+		repository packages  that meet a  certain chriteria or
+		threshhold  of usefulness.   Retrieval and  storage of
+		online packages to  create a central package database.
+		Certain  optimizations apply which  allow it  to prune
+		itself over time.  Perhaps  it can have the ability to
+		drop items from the cache which have not been used, or
+		another idea  would be to  index the packages  using a
+		relative compression scheme, that is, to hash files to
+		their md5  sum and length, and  then determine whether
+		packages have  the same copy  of a specific  file, and
+		then  use this to  create a  smaller package  based on
+		object oriented data storage,  and then compress it as
+		well.
+	      </P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN45"
+>Package Creation</A
+></H2
+><P
+>&#13;	  Package creation  is a  very important part  of what  we do.
+	  Note  that  it  is  a  separate task  from  upstream  source
+	  location  or even  package  storage.  The  point of  package
+	  creation  is to, as  rapidly as  possible, take  an upstream
+	  source and turn it into a debian package or similar.
+	</P
+><P
+>&#13;	  Luckily there are no  end of Debian tools, already packaged,
+	  which  very effectively aid  in this  process.  But  here we
+	  will talk about how to do this.
+	</P
+><P
+>&#13;	  During package  creation, the state  of the package  will be
+	  monitored using CVS.  There are  a few assistants to CVS for
+	  these purposes.
+
+	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		cvs-autoreleasedeb - Automatically release/upload debian packages from CVS
+	      </P
+></LI
+><LI
+><P
+>&#13;		cvs-buildpackage - A set of Debian package scripts for CVS source trees.
+	      </P
+></LI
+></UL
+>
+
+	  or alternatively,
+	  
+	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		svn-buildpackage - helper programs to maintain Debian packages with Subversion
+	      </P
+></LI
+></UL
+>
+
+	  In  addition, packages  will be  built and  tested  with the
+	  likes of pbuilder.
+
+	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		devscripts-el - Emacs wrappers for the commands in devscripts
+	      </P
+></LI
+><LI
+><P
+>&#13;		pbuilder - personal package builder for Debian packages
+	      </P
+></LI
+><LI
+><P
+>&#13;		pbuilder-uml - user-mode-linux version of pbuilder
+	      </P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN65"
+>Package Maintainence</A
+></H2
+><P
+>&#13;	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		debian-el - Emacs helpers specific to Debian users
+	      </P
+></LI
+><LI
+><P
+>&#13;		dpkg-dev-el - Emacs helpers specific to Debian development
+	      </P
+></LI
+><LI
+><P
+>&#13;		devscripts-el - Emacs wrappers for the commands in devscripts
+	      </P
+></LI
+><LI
+><P
+>&#13;		debget - download/compile source and binary Debian packages
+	      </P
+></LI
+><LI
+><P
+>&#13;		devscripts - Scripts to make the life of a Debian Package maintainer easier
+	      </P
+></LI
+><LI
+><P
+>&#13;		svn-buildpackage - helper programs to maintain Debian packages with Subversion
+	      </P
+></LI
+><LI
+><P
+>&#13;		svn-devscripts - Dummy package for upgrade purposes only
+	      </P
+></LI
+><LI
+><P
+>&#13;		debbugs - The bug tracking system based on the active Debian BTS
+	      </P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN85"
+>Package Storage</A
+></H2
+><P
+>&#13;	  Package  storage should  be  done in  a  very large  central
+	  package  repository,  but  some  care  should  be  taken  to
+	  effectively  distinguish various  package  states.  Normally
+	  package state  is handled by bug tracking.   Bug tracking is
+	  necessary to communicate, but I would also like to develop a
+	  central ontology of package states to aid in categorization.
+	</P
+><P
+>&#13;	  There  are  many  existing  tools  that  deal  with  package
+	  storage.
+	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		dput - Debian package upload tool
+	      </P
+></LI
+><LI
+><P
+>&#13;		mini-dinstall - daemon for updating Debian packages in a repository
+	      </P
+></LI
+><LI
+><P
+>&#13;		apt-proxy - Debian archive proxy and partial mirror builder
+	      </P
+></LI
+></UL
+>
+	</P
+></DIV
+><DIV
+CLASS="sect2"
+><H2
+CLASS="sect2"
+><A
+NAME="AEN96"
+>Package Querying</A
+></H2
+><P
+>&#13;	  <P
+></P
+><UL
+><LI
+><P
+>&#13;		In addition  to existing functionality,  here are some
+		ideas for useful package search features.
+	      </P
+></LI
+><LI
+><P
+>&#13;		Incorporate some of the relations embodied in the SubL
+		API to create package relation queries.
+	      </P
+></LI
+><LI
+><P
+>&#13;		Expand  iasearch which  uses libbow,  solve  bugs with
+		iasearch.   dpkg-iasearch  -   An  interface  to  find
+		relevant packages in Debian.
+	      </P
+></LI
+><LI
+><P
+>&#13;		Apply other  search tools  like lemur, inquery  and so
+		forth.
+	      </P
+></LI
+><LI
+><P
+>&#13;		BE able to generate a list of words that are contained
+		between multiple packages.
+	      </P
+></LI
+></UL
+>
+	</P
+></DIV
+></DIV
+></DIV
+><DIV
+CLASS="NAVFOOTER"
+><HR
+ALIGN="LEFT"
+WIDTH="100%"><TABLE
+SUMMARY="Footer navigation table"
+WIDTH="100%"
+BORDER="0"
+CELLPADDING="0"
+CELLSPACING="0"
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+><A
+HREF="c14.html"
+ACCESSKEY="P"
+>Prev</A
+></TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+><A
+HREF="book1.html"
+ACCESSKEY="H"
+>Home</A
+></TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+><A
+HREF="c110.html"
+ACCESSKEY="N"
+>Next</A
+></TD
+></TR
+><TR
+><TD
+WIDTH="33%"
+ALIGN="left"
+VALIGN="top"
+>Ontology of Software System Distribution States</TD
+><TD
+WIDTH="34%"
+ALIGN="center"
+VALIGN="top"
+>&nbsp;</TD
+><TD
+WIDTH="33%"
+ALIGN="right"
+VALIGN="top"
+>References</TD
+></TR
+></TABLE
+></DIV
+></BODY
+></HTML
+>

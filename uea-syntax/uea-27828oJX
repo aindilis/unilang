@@ -1,0 +1,22 @@
+Trying 127.0.0.1...
+Connected to localhost.
+Escape character is '^]'.
+<message>
+  <id>1</id>
+  <sender>NLU</sender>
+  <receiver>Emacs-Client</receiver>
+  <date>Thu Dec  2 09:33:45 CST 2010</date>
+  <contents></contents>
+  <data>$VAR1 = {
+          '_DoNotLog' => 1,
+          'Result' => {
+                        'recover#v#1' => 'get or find back; recover the use of; "She regained control of herself"; "She found her voice and replied quickly"  ',
+                        'recover#v#3' => 'regain a former condition after a financial loss; "We expect the stocks to recover to $2.90"; "The company managed to recuperate"  ',
+                        'recover#v#5' => 'reuse (materials from waste products)  ',
+                        'recover#v#6' => 'cover anew; "recover a chair"  ',
+                        'recover#v#4' => 'regain or make up for; "recuperate one\'s losses"  ',
+                        'recover#v#2' => 'get over an illness or shock; "The patient is recuperating"  '
+                      }
+        };
+</data>
+</message>

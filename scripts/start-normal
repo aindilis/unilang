@@ -1,0 +1,92 @@
+#!/usr/bin/perl -w
+
+use Getopt::Declare;
+use MyFRDCSA qw (ConcatDir Dir);
+
+my $specification = "
+	-u			Start UniLang
+	-c 			Start UniLang-Client
+	-a [<agents>...]	Start Agents
+
+	--check <agent>		Check whether agent exists
+";
+my $conf = new Getopt::Declare($specification);
+
+my $stdoutwrapper = 0;
+my $tc = '/var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl';
+# my $tc = 'cat';
+
+my %AgentRegistry = (
+		     "Audience" => ConcatDir(Dir("internal codebases"),
+					     "audience","audience"). " -u -a OSCAR",
+		     "Broker" => ConcatDir(Dir("internal codebases"),
+					   "broker","broker") . " -u",
+		     "BusRoute" => ConcatDir(Dir("internal codebases"),
+					     "busroute","busroute") . " -u",
+		     "Classify" => ConcatDir(Dir("internal codebases"),
+					     "classify","classify") . " -u",
+		     "CLEAR" => ConcatDir(Dir("internal codebases"),
+					  "clear","cla") . " -u -r",
+		     "Corpus" => ConcatDir(Dir("internal codebases"),
+					   "corpus","corpus") . " -u",
+		     "CSO" => ConcatDir(Dir("internal codebases"),
+					"cso","cso") . " -u --mysql",
+		     "Echo" => ConcatDir(Dir("internal codebases"),
+					 "unilang/scripts","echo") . " ",
+		     "ELog" => ConcatDir(Dir("internal codebases"),
+					 "event-log","elog") . " -u",
+		     "Formalize" => ConcatDir(Dir("internal codebases"),
+					      "formalize","formalize") . " -u",
+		     "KBS" => ConcatDir(Dir("internal codebases"),
+					"freekbs","kbs") . " -u",
+		     "Manager" => ConcatDir(Dir("internal codebases"),
+					    "manager","manager") . " -u",
+		     "OpenCyc" => ConcatDir(Dir("internal codebases"),
+					    "opencyc-common",
+					    "opencyc") . " -a",
+		     "PSE" => ConcatDir(Dir("internal codebases"),
+					"pse","pse"),
+		     "QUAC" => ConcatDir(Dir("internal codebases"),
+					 "quac","quac"). " -u --mods OpenEphyra",
+		     "UniLang-Client" => ConcatDir(Dir("internal codebases"),
+						   "unilang","unilang-client"),
+		    );
+
+if (exists $conf->{'-u'}) {
+  my $prog = ConcatDir(Dir("internal codebases"),"unilang","unilang");
+  if ($stdoutwrapper) {
+    # system "($prog | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl 'UniLang: ') &";
+    system "($prog | $tc) &";
+  } else {
+    system "$prog &";
+  }
+  sleep 1;
+}
+
+if (exists $conf->{'-a'}) {
+  foreach my $agent (@{$conf->{'-a'}}) {
+    if ($stdoutwrapper) {
+      # system "($AgentRegistry{$agent} | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl '$agent: ') &";
+      system "($AgentRegistry{$agent} | $tc) &";
+    } else {
+      system "$AgentRegistry{$agent} &";
+    }
+  }
+}
+
+if (exists $conf->{'-c'}) {
+  if ($stdoutwrapper) {
+    # system "$AgentRegistry{'UniLang-Client'} | /var/lib/myfrdcsa/codebases/internal/unilang/scripts/stdout-wrapper.pl 'UniLang-Client: '";
+    system "$AgentRegistry{'UniLang-Client'} | $tc";
+  } else {
+    system $AgentRegistry{'UniLang-Client'};
+  }
+}
+
+if (exists $conf->{'--check'}) {
+  if (exists $AgentRegistry{$conf->{'--check'}}) {
+    print "agent exists\n";
+  } else {
+    print "agent does not exist\n";
+  }
+}

@@ -1,0 +1,87 @@
+#!/usr/bin/perl -w
+
+use BOSS::Config;
+use PerlLib::SwissArmyKnife;
+use UniLang::Util::TempAgent;
+
+my $tempagent = UniLang::Util::TempAgent->new;
+
+$specification = q(
+	-r <receiver>		Receiver
+	-c <contents>		Contents
+	-d <data>		Data
+	-q			QueryAgent
+
+	-i			Interactive
+);
+
+my $config =
+  BOSS::Config->new
+  (Spec => $specification);
+my $conf = $config->CLIConfig;
+# $UNIVERSAL::systemdir = "/var/lib/myfrdcsa/codebases/minor/system";
+
+my $receiver = $conf->{'-r'} || 'UniLang';
+my $contents = $conf->{'-c'} || 'echo hi';
+my $data = $conf->{'-d'} || undef;
+
+print ClearDumper
+  ({
+    Receiver => $receiver,
+    Contents => $contents,
+    Data => $data,
+    });
+
+if ($conf->{'-i'}) {
+  while ($i = <>) {
+    chomp $i;
+    if ($i =~ /^(\S+),\s*(.+)$/) {
+      # send this, no logging, to formalize
+      if ($conf->{'-q'}) {
+	my $res1 = $tempagent->QueryAgent
+	  (
+	   Receiver => $1,
+	   Contents => $2,
+	   Data => {
+		    _DoNotLog => 1,
+		   },
+	  );
+	print ClearDumper({Res1 => $res1});
+      } else {
+	$tempagent->Send
+	  (
+	   Receiver => $1,
+	   Contents => $2,
+	   Data => {
+		    _DoNotLog => 1,
+		   },
+	  );
+      }
+    }
+  }
+} else {
+  my %args =
+    (
+     Receiver => $receiver,
+     Contents => $contents,
+    );
+  if (scalar keys %$data) {
+    $args{Data} = $data;
+  }
+  if ($conf->{'-q'}) {
+    my $message = $tempagent->MyAgent->QueryAgent
+      (
+       Receiver => $receiver,
+       Contents => $contents,
+       # Data => {
+       # 		_DoNotLog => 1,
+       # 	       },
+      );
+    print ClearDumper({Message => $message});
+  } else {
+    $tempagent->Send
+      (
+       %args,
+      );
+  }
+}
